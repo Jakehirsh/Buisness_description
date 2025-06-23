@@ -2,12 +2,12 @@ import os
 from dotenv import load_dotenv
 from openai import OpenAI
 
-# Load API key from .env file
+
 load_dotenv()
 api_key = os.getenv("OPENAI_API_KEY")
 client = OpenAI(api_key=api_key)
 
-# Ask OpenAI to describe a business
+
 def get_business_description(company_name):
     prompt = (
         f"Provide a detailed, professional business description of {company_name}. "
@@ -23,7 +23,7 @@ def get_business_description(company_name):
 
 
 def save_to_md(company_name, description):
-    # Make sure the "descriptions" folder exists
+    
     if not os.path.exists("descriptions"):
         os.mkdir("descriptions")
 
